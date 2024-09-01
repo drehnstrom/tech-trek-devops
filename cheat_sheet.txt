@@ -1,0 +1,3 @@
+# Create a Virtual Environment
+python -m venv ~/tech-trek/venv
+source ~/tech-trek/venv/bin/activate
