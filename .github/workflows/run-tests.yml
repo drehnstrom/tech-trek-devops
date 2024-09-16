@@ -68,4 +68,4 @@ jobs:
           service: ${{ github.actor }}-tech-trek-${{ github.sha }}
           image: docker.io/${{ secrets.DOCKER_HUB_USERNAME }}/tech-trek:${{ github.sha }}
           region: us-central1
-          allow-unauthenticated: true
+          flags: "--allow-unauthenticated"
