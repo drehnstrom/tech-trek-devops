@@ -1,4 +1,4 @@
-name: CI/CD Pipeline
+name: Test-Build-Deploy to Cloud Run Pipeline
 
 on:
   push:
