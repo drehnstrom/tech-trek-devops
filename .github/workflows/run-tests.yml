@@ -67,9 +67,6 @@ jobs:
 
       - name: Get Cloud Run Service URL
         run: |
-          # Disable masking for this step
-          echo "::add-mask::false"
-          
           URL=$(gcloud run services describe "${{ github.actor }}-tech-trek" --region us-central1 --format 'value(status.url)')
           echo "Cloud Run service URL: $URL"
           echo "SERVICE_URL=$URL" >> $GITHUB_ENV
