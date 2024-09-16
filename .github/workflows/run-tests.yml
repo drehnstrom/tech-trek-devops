@@ -5,14 +5,9 @@ on:
     branches:
       - session-3
       - main
-  pull_request:
-    branches:
-      - main
-
 jobs:
   test:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -65,7 +60,7 @@ jobs:
       - name: Deploy to Cloud Run
         uses: google-github-actions/deploy-cloudrun@v1
         with:
-          service: ${{ github.actor }}-tech-trek-${{ github.sha }}
+          service: ${{ github.actor }}-tech-trek
           image: docker.io/${{ secrets.DOCKER_HUB_USERNAME }}/tech-trek:${{ github.sha }}
           region: us-central1
           flags: "--allow-unauthenticated"
