@@ -64,3 +64,9 @@ jobs:
           image: docker.io/${{ secrets.DOCKER_HUB_USERNAME }}/tech-trek:${{ github.sha }}
           region: us-central1
           flags: "--allow-unauthenticated"
+
+      - name: Get Cloud Run Service URL
+        run: |
+          URL=$(gcloud run services describe tech-trek-service --region us-central1 --format 'value(status.url)')
+          echo "Cloud Run service URL: $URL"
+          echo "SERVICE_URL=$URL" >> $GITHUB_ENV
